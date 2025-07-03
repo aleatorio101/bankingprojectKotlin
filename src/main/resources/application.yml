@@ -1,0 +1,58 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:db;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  
+  graphql:
+    path: /graphql
+    graphiql:
+      enabled: true
+  
+  cache:
+    type: redis
+  
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      timeout: 2000ms
+  
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: ${EMAIL:}
+    password: ${PASSWORD:}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics,prometheus
+  endpoint:
+    health:
+      show-details: always
+
+jwt:
+  secret: ${JWT_SECRET:minhachavesecretasupersegurasupersegurasupersegura}
+  expiration: 86400000
+
+logging:
+  level:
+    com.example.demo: DEBUG
+    org.springframework.security: DEBUG
