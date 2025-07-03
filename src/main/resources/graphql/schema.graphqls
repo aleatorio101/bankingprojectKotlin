@@ -1,0 +1,27 @@
+type Query {
+    contas: [Conta]!
+    ping: String!
+}
+
+type Mutation {
+    depositar(numeroConta: String!, valor: Float!): Conta!
+    sacar(numeroConta: String!, valor: Float!): Conta!
+    transferir(origemNumero: String!, destinoNumero: String!, valor: Float!): Conta!
+    criarCliente(nome: String!, cpf: String!, email: String!): Cliente!
+    criarConta(numero: String!, clienteId: ID!): Conta!
+}
+
+type Conta {
+    id: ID!
+    numero: String!
+    saldo: Float!
+    ativa: Boolean!
+    cliente: Cliente!
+}
+
+type Cliente {
+    id: ID!
+    nome: String!
+    cpf: String!
+    email: String!
+}

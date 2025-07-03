@@ -1,0 +1,9 @@
+2025-07-03 16:11:02.878127-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+INSERT INTO usuario (username, password, role, ativo, data_criacao) SELECT 'admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lIkTjL2J8QfF/wLSq', 'ADMIN', true, CURRENT_TIMESTAMP WHERE NOT EXISTS (SELECT 1 FROM usuario WHERE username = 'admin') [42102-224]
+2025-07-03 16:14:25.290974-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USUARIO" not found; SQL statement:
+INSERT INTO usuario (username, password, role, ativo, data_criacao) SELECT 'admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lIkTjL2J8QfF/wLSq', 'ADMIN', true, CURRENT_TIMESTAMP WHERE NOT EXISTS (SELECT 1 FROM usuario WHERE username = 'admin') [42102-224]
+2025-07-03 16:16:00.558932-03:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "CLIENTE" not found; SQL statement:
+INSERT INTO Cliente (username, password, role, ativo, data_criacao) SELECT 'admin', '$2a$10$N.zmdr9k7uOCQb376NoUnuTJ8iAt6Z5EHsM8lIkTjL2J8QfF/wLSq', 'ADMIN', true, CURRENT_TIMESTAMP WHERE NOT EXISTS (SELECT 1 FROM usuario WHERE username = 'admin') [42102-224]
